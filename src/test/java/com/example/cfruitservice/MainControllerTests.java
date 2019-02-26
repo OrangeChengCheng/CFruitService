@@ -1,4 +1,4 @@
-package com.example.cfruitservice.cfruitservice;
+package com.example.cfruitservice;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class CfruitserviceApplicationTests {
+public class MainControllerTests {
 
     @Test
     public void contextLoads() {
