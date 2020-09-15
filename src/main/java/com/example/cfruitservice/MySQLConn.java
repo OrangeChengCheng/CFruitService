@@ -7,13 +7,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.sql.*;
 import java.util.Properties;
-import java.util.ResourceBundle;
 
 public class MySQLConn {
-
-
-
-
     //mysql驱动包名
     private static String DRIVER;
     //数据库连接地址
@@ -41,7 +36,6 @@ public class MySQLConn {
 
 
     public static Connection getConnection(){
-        Tools.Log("getConnection");
         Connection conn = null;
         try {
             Class.forName(DRIVER);

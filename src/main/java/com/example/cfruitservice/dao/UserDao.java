@@ -2,7 +2,7 @@ package com.example.cfruitservice.dao;
 
 
 import com.example.cfruitservice.MySQLConn;
-import com.example.cfruitservice.entity.RequestParam;
+import com.example.cfruitservice.entity.UserInfo;
 import org.springframework.stereotype.Repository;
 import java.sql.*;
 
@@ -11,7 +11,7 @@ import java.sql.*;
 public class UserDao {
 
 
-    public String getUserListDao (RequestParam param) {
+    public String getUserListDao (UserInfo userInfo) {
 
         String text = "";
         Connection connection = null;
@@ -26,7 +26,7 @@ public class UserDao {
             ResultSet rst = prst.executeQuery();
             while (rst.next()) {
                 System.out.println("用户名:" + rst.getString("username"));
-                text = text + "[]" + "用户名:" + rst.getString("username");
+                text = text + "【用户名:" + rst.getString("username") + "】";
             }
 
             MySQLConn.closeResultSet(prst, rst);

@@ -2,24 +2,14 @@ package com.example.cfruitservice.entity;
 
 public class RequestParam {
 
-    private String userName;
-    private String password;
+    private Object data;
 
-
-    public String getUserName() {
-        return userName;
+    public Object getData() {
+        return data;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
+    public void setData(Object data) {
+        this.data = data;
     }
 
 

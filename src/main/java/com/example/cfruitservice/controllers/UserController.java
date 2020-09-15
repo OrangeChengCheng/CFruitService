@@ -2,6 +2,7 @@ package com.example.cfruitservice.controllers;
 
 import com.alibaba.fastjson.JSON;
 import com.example.cfruitservice.entity.RequestParam;
+import com.example.cfruitservice.entity.UserInfo;
 import com.example.cfruitservice.service.UserSercive;
 import com.example.cfruitservice.unit.Logger;
 import com.example.cfruitservice.unit.Tools;
@@ -28,9 +29,12 @@ public class UserController {
     @ResponseBody
     public String getUserList(@RequestBody RequestParam param, HttpServletRequest request) throws IOException {
 
-        Logger.recordRequestOperate(JSON.toJSONString(param), request);
+        //请求日志
+        Logger.recordRequestOperate(param, request);
 
-        String result = userService.getLoginService(param);
+        UserInfo userInfo = JSON.parseObject(JSON.toJSONString(param.getData()),UserInfo.class);
+
+        String result = userService.getLoginService(userInfo);
         return result;
     }
 
